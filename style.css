@@ -1,23 +1,88 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 *,  *::before, *::after {
     box-sizing: border-box;
 }
 
+/*.container > div {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #000000;
+  }
+*/
+  /*.container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #000000;
+    height: 100%;
+    grid-gap: 10px;
+    grid-template-columns: repeat(1fr);
+    grid-template-rows: 100px;
+    grid-template-areas: 
+    "h"
+    "m1"
+    "m2"
+    "m3"
+    "m4";
+}
+
+.m1 {
+    grid-area: m1;
+    height: 400px;
+    width: 400px; 
+    background: white;
+}
+
+.m2 {
+    grid-area: m2;
+    height: 400px;
+    width: 400px; 
+    background: white;
+}
+
+.m3 {
+    grid-area: m3;
+    height: 400px;
+    width: 400px; 
+    background: white;
+}
+
+.m4 {
+    grid-area: m4;
+    height: 400px;
+    width: 400px; 
+    background: white;
+}
+
+hr.rounded {
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    margin: 10%;
+}
+*/
+
+
 body {
-    background-color: #6E6E74;
+    background-color: #052B53;
     height: 100%;
     padding: 0px;
     max-width: 100%;
     margin: auto;
+    font-family: 'Montserrat';
+    font-weight: bold;
 }
 
 header {
-    background: #052B53;
+    background: #6E6E74;
     text-align: center;
     position: fixed;
     width: 100%;
     z-index: 999;
+    grid-area: h;
 }
 
 .nav-toggle {
@@ -64,7 +129,7 @@ nav {
     text-align: left;
     top: 100%;
     left: 0;
-    background: #052B53;
+    background: #6E6E74;
     width: 100%;
     transform: scale(1,0);
     transform-origin: top;
@@ -75,7 +140,6 @@ nav ul {
     margin: 0;
     padding: 0;
     list-style:none;
-
 }
 
 nav li {
@@ -84,7 +148,7 @@ nav li {
 }
 
 nav a {
-    color: white;
+    color: #e78c57;
     text-decoration: none;
     font-size: 1.2rem;
     text-transform: uppercase;
@@ -93,7 +157,7 @@ nav a {
 }
 
 nav a:hover {
-    color: black;
+    color: whitesmoke;
 }
 
 .nav-toggle:checked ~ nav  {
@@ -104,6 +168,87 @@ nav a:hover {
     opacity: 1;
     transition: opacity 250ms ease-in-out 250ms;
 }
+
+.content {
+    grid-area: c;
+}
+
+.about {
+    grid-area: a;
+    height: 100%;
+    width: 100%;
+    border: solid red;
+}
+
+.projects {
+    grid-area: p;
+    height: 100%;
+    width: 100%;
+    border: solid red;
+}
+
+.contact {
+    grid-area: ct;
+    height: 100%;
+    width: 100%;
+    border: solid red;
+}
+
+.container {
+    font-size: 1.5em;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-areas:
+    "."
+    "c"
+    "a"
+    "p"
+    "ct";
+    padding: 1em;
+}
+
+.hero {
+    max-width: auto;
+    max-height: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.445), rgba(0,0,0,0.411)), url('space3.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    position: relative;
+}
+
+.hero-content {
+    width: 50%;
+    background-image: url('portraet2.png');
+    background-repeat: no-repeat;
+    background-position: right 100%;
+    background-size: cover;
+    height: 100%;
+    position: relative;
+}
+
+.hero h2 {
+    font-size: 1em;
+    font-weight: 300;
+    color: #A67A61;
+    text-align: left;
+}
+
+.hero p {
+    font-weight: 300;
+    line-height:  1em;
+    color: #A67A61;
+    text-align: left;
+}
+
+.line {
+    border: 1px solid yellow;
+}
+
 
 @media only screen and (min-width: 550px) {
     .nav-toggle-label {
@@ -146,7 +291,7 @@ nav a:hover {
         content:  '';
         display: block;
         height: 5px;
-        background: black;
+        background: whitesmoke;
         position: absolute;
         bottom: -.75em;
         left: 0;
@@ -157,5 +302,31 @@ nav a:hover {
 
     nav a:hover::before {
         transform: scale(1,1);
+    }
+
+    .container {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+
+    }
+
+    .hero {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        max-width: 100%;
+        max-height: 100%;
+        margin: 0 auto;
+        text-align: center;
+        outline: 2px solid black;
+    }
+
+    .hero-content {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 100%;
+        position: relative;
     }
 }
