@@ -116,7 +116,7 @@ nav a:hover {
     height: 100%;
     width: 100%;
     border: solid red;
-    margin-top: 30px;
+    margin-top: 20%;
 }
 
 .projects {
@@ -139,7 +139,7 @@ nav a:hover {
     height: 100%;
     display: grid;
     grid-template-areas:
-    "."
+    "h"
     "c"
     "a"
     "p"
@@ -164,8 +164,8 @@ nav a:hover {
     width: 50%;
     background-image: url('portraet2.png');
     background-repeat: no-repeat;
-    background-position: right 100%;
-    background-size: cover;
+    background-position: 100% 100%;
+    background-size: 120%;
     height: 100%;
     position: relative;
     left: 50%;
@@ -191,12 +191,29 @@ nav a:hover {
     top: 20%;
 }
 
-.line {
-    border: 1px solid yellow;
+.hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    right: 93%;
+    top: 25%;
 }
 
+.hero-btn:hover {
+    border: 1px solid #c0c0c0;
+    background: #c0c0c0;
+    transition: 1s;
+}
+
+
 /*desktop version starter her */
-@media only screen and (min-width: 550px) {
+@media only screen and (min-width: 700px) {
     .nav-toggle-label {
         display: none;
     }
@@ -262,22 +279,32 @@ nav a:hover {
         height: 100%;
         position: relative;
         outline: 2px solid black;
+        bottom: 40%;
     }
 
     .hero-content {
         background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
+        background-position: bottom right;
+        background-size: 120%;
         height: 100%;
         position: relative;
+        font-size: 4vw;
+    }
+
+    .hero-btn {
+        font-size: 2vw;
+        top: 30%;
     }
 
     .hero h2 {
-        font-size: 2rem;
+        top: 30%;
     }
 
     .hero p {
-        font-size: 2rem;
+        top: 30%;
     }
 
+    .about {
+    margin-top: 5px;
+    }
 }
